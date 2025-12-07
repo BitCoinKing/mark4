@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mark 4 Careers — Sparkwavv Pathways</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Meta -->
+    <meta name="description" content="Mark4Work & Mark4Partners — modern career strategy, executive transitions, and Sparkwavv-aligned pathways for every career stage.">
+    <meta name="theme-color" content="#E3E5E8" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mark 4 Careers — Sparkwavv Pathways" />
+    <meta property="og:description" content="Wave Rider & Explorer programs for Gen Z, Millennials, Gen X & Encore careers." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mark4careers.com" />
+    <meta property="og:image" content="/og.jpg" />
+
+    <!-- Fonts + Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Calendly widget -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <style>
+      :root {
+        /* APPROX brand colors – swap to exact Pantone HEX when ready */
+        --swv-bg: #e8ebee;         /* ~Pantone 9102C Pale Grey */
+        --swv-bg-alt: #f5f6f7;     /* ~Pantone 9101C */
+        --swv-gray-ink: #a1a5aa;   /* ~Cool Gray 4C */
+        --swv-blue-main: #265fba;  /* ~Pantone 660C */
+        --swv-blue-deep: #143a7b;  /* ~Pantone 662C */
+        --swv-blue-mid: #1e4e96;   /* ~Pantone 661C */
+        --swv-orange: #ff5a2c;     /* ~Pantone 2028C */
+        --swv-yellow: #ffb81c;     /* ~Pantone 123C */
+      }
+
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(120% 160% at 0% 0%, #ffffff 0, var(--swv-bg) 40%, #f5f6f7 100%);
+        color: #0f172a;
+      }
+      .card {
+        transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease, background-color .2s ease;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(15,23,42,0.14);
+        border-color: rgba(37,99,235,0.4);
+        background-color: #ffffff;
+      }
+      .pill {
+        background: linear-gradient(120deg, rgba(38,95,186,0.08), rgba(255,90,44,0.08));
+      }
+      .spark-pill {
+        background: radial-gradient(circle at 0 0, rgba(255,184,28,0.4), transparent 55%),
+                    radial-gradient(circle at 100% 100%, rgba(38,95,186,0.4), transparent 55%),
+                    rgba(255,255,255,0.80);
+        backdrop-filter: blur(10px);
+      }
+      .section-bg {
+        background: radial-gradient(90% 120% at 10% 0%, rgba(255,184,28,0.14), transparent 50%),
+                    radial-gradient(120% 120% at 100% 100%, rgba(38,95,186,0.12), transparent 60%),
+                    var(--swv-bg-alt);
+      }
+      .badge-highlight {
+        background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-2xl flex items-center justify-center" style="background: radial-gradient(circle at 30% 30%, var(--swv-yellow), var(--swv-orange));">
+            <span class="text-xs font-black text-white tracking-tight">M4</span>
+          </div>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold tracking-tight text-slate-900">Mark 4 Careers</span>
+            <span class="text-[11px] uppercase tracking-[0.2em] text-[color:var(--swv-gray-ink)]">Sparkwavv Pathways</span>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-7 text-xs font-medium text-slate-600">
+          <a href="#about" class="hover:text-slate-900">About</a>
+          <a href="#tracks" class="hover:text-slate-900">Who I Work With</a>
+          <a href="#framework" class="hover:text-slate-900">4-Swell Framework</a>
+          <a href="#packages" class="hover:text-slate-900">Packages</a>
+          <a href="#results" class="hover:text-slate-900">Client Wins</a>
+          <a href="#faq" class="hover:text-slate-900">FAQ</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button
+            class="hidden sm:inline-flex items-center rounded-full border border-slate-300 px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50"
+            onclick="openCalendlyIntro()">
+            Free 20-min Fit Call
+          </button>
+          <button
+            class="inline-flex items-center rounded-full px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-sm hover:shadow-md"
+            style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));"
+            onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">
+            View Packages
+          </button>
+          <button class="md:hidden p-2" aria-label="Toggle navigation" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-nav" class="hidden md:hidden border-t border-slate-200 bg-white/95">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm text-slate-700">
+          <a href="#about" class="hover:text-slate-900">About</a>
+          <a href="#tracks" class="hover:text-slate-900">Who I Work With</a>
+          <a href="#framework" class="hover:text-slate-900">Framework</a>
+          <a href="#packages" class="hover:text-slate-900">Packages</a>
+          <a href="#results" class="hover:text-slate-900">Client Wins</a>
+          <a href="#faq" class="hover:text-slate-900">FAQ</a>
+          <button
+            class="mt-1 inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-xs font-medium hover:bg-slate-50"
+            onclick="openCalendlyIntro()">
+            Free 20-min Fit Call
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="about" class="pt-10 pb-16 sm:pt-14 sm:pb-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2.3fr)] items-center">
+        <!-- Left -->
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.23em] text-slate-700 pill border border-slate-200/80">
+            <span class="h-1.5 w-1.5 rounded-full" style="background: var(--swv-orange);"></span>
+            Discovery • Branding • Outreach • Ignite
+          </span>
+
+          <h1 class="mt-5 text-3xl sm:text-4xl lg:text-[2.85rem] font-semibold leading-tight tracking-tight text-slate-900">
+            Career strategy that turns <span class="underline decoration-[color:var(--swv-yellow)] decoration-4 underline-offset-4">what you’ve done</span>
+            into your next <span style="color:var(--swv-blue-mid)">undeniable opportunity.</span>
+          </h1>
+
+          <p class="mt-4 text-sm sm:text-[15px] text-slate-600 max-w-xl">
+            I work with high-potential professionals, executives, and encore-career builders to design the next chapter of their work life —
+            mapping your strengths, rebuilding your story, and building a modern outreach engine that actually moves you forward.
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <button
+              class="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:shadow-md"
+              style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));"
+              onclick="openCalendlyIntro()">
+              Book Free Fit Call
+            </button>
+
+            <button
+              class="inline-flex items-center rounded-full border border-slate-300/90 bg-white/80 px-4 py-2.5 text-xs sm:text-sm font-medium text-slate-800 hover:bg-slate-50"
+              onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">
+              Explore Wave Rider & Explorer Packages
+            </button>
+
+            <div class="flex items-center gap-2 text-[11px] text-slate-500 mt-1">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+              <span>Zoom links auto-generated via Calendly after booking</span>
+            </div>
+          </div>
+
+          <!-- Quick proof strip -->
+          <div class="mt-7 flex flex-wrap items-center gap-4 text-[11px] text-slate-500">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/80 border border-slate-200 text-[11px] font-semibold" style="color:var(--swv-blue-main);">
+                30+
+              </span>
+              <span>years building careers in media, leadership & education</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/80 border border-slate-200 text-[11px] font-semibold" style="color:var(--swv-orange);">
+                300+
+              </span>
+              <span>professionals coached across Gen Z, Millennials & Gen X</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Photo + Video -->
+        <div class="relative">
+          <div class="absolute -inset-4 -z-10 rounded-[2rem] bg-white/70 shadow-[0_22px_60px_rgba(15,23,42,0.16)]"></div>
+          <div class="rounded-[1.6rem] overflow-hidden border border-slate-200 bg-white flex flex-col">
+            <!-- Mark photo placeholder -->
+            <div class="h-52 sm:h-64 bg-slate-200/60 flex items-center justify-center relative">
+              <!-- Replace this div background with Mark's hero photo -->
+              <span class="text-xs font-medium tracking-wide text-slate-600">
+                Place Mark’s hero photo here (1600×900)
+              </span>
+              <div class="absolute bottom-3 left-3 rounded-full px-3 py-1 text-[10px] font-semibold text-white spark-pill">
+                Mark Workman · Founder, Sparkwavv / Mark4
+              </div>
+            </div>
+
+            <!-- Video intro -->
+            <div class="p-4 sm:p-5">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <div class="flex flex-col">
+                  <span class="text-xs font-semibold text-slate-800 uppercase tracking-[0.18em]">Warm intro</span>
+                  <span class="text-sm text-slate-600">Watch this first: 3-minute welcome</span>
+                </div>
+                <span class="inline-flex items-center rounded-full px-3 py-1 text-[10px] font-medium border border-emerald-200 bg-emerald-50 text-emerald-700">
+                  Recommended before booking
+                </span>
+              </div>
+
+              <div class="aspect-video rounded-xl overflow-hidden border border-slate-200 bg-slate-950/80">
+                <!-- TODO: replace VIDEO_ID with real YouTube video -->
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
+                  title="Mark 4 Careers Intro"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+
+              <p class="mt-3 text-[11px] text-slate-500">
+                After watching, choose the track that best fits you below — Wave Rider (Gen Z / early-career) or Explorer (leaders, executives & encore careers).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO I WORK WITH / TRACKS -->
+    <section id="tracks" class="py-14 section-bg border-y border-slate-200/70">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+              Two tracks. Six generations. One Sparkwavv blueprint.
+            </h2>
+            <p class="mt-2 text-sm text-slate-600 max-w-2xl">
+              Whether you’re launching your first career wave or designing an encore chapter, we map you into the right Mark4 pathway
+              using Sparkwavv’s generational and career-stage model.
+            </p>
+          </div>
+          <div class="text-[11px] text-slate-500 max-w-xs">
+            From Gen Z and Millennials to Gen X, Jones, and Boomers — each cohort plugs into a specific combination of Discovery, Branding,
+            Outreach, and Ignite work. No copy-paste playbooks.
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-5 lg:grid-cols-2">
+          <!-- Wave Rider / Mark4Work -->
+          <div class="card rounded-2xl border border-slate-200 bg-white/80 p-5 sm:p-6">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <div class="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1 text-[11px] font-semibold text-sky-700 border border-sky-100">
+                  Wave Rider · Mark4Work
+                </div>
+                <h3 class="mt-3 text-lg font-semibold text-slate-900">Gen Z & early-career professionals</h3>
+              </div>
+              <div class="hidden sm:flex flex-col items-end text-right text-[11px] text-slate-500">
+                <span>Approx age: 21–35</span>
+                <span>Career stages: Exploration & Establishment</span>
+              </div>
+            </div>
+
+            <p class="mt-3 text-sm text-slate-600">
+              For students, recent grads, and emerging professionals who want clarity, confidence, and a real plan — not random job boards.
+            </p>
+
+            <div class="mt-4 grid sm:grid-cols-2 gap-3 text-[12px] text-slate-600">
+              <ul class="space-y-1.5">
+                <li>• First job or first promotion</li>
+                <li>• Building your personal brand & LinkedIn</li>
+                <li>• Translating majors & projects into offers</li>
+              </ul>
+              <ul class="space-y-1.5">
+                <li>• Gen Z / Millennial-friendly playbooks</li>
+                <li>• Tight, visual tools (no fluff)</li>
+                <li>• Weekly momentum tracking</li>
+              </ul>
+            </div>
+
+            <button
+              class="mt-4 inline-flex items-center rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-xs font-medium text-sky-800 hover:bg-sky-100"
+              onclick="document.getElementById('wave-rider').scrollIntoView({behavior:'smooth'})">
+              View Wave Rider Packages
+            </button>
+          </div>
+
+          <!-- Explorer / Mark4Partners -->
+          <div class="card rounded-2xl border border-slate-200 bg-white/80 p-5 sm:p-6">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <div class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-[11px] font-semibold text-indigo-700 border border-indigo-100">
+                  Explorer · Mark4Partners
+                </div>
+                <h3 class="mt-3 text-lg font-semibold text-slate-900">Executives, leaders & encore careers</h3>
+              </div>
+              <div class="hidden sm:flex flex-col items-end text-right text-[11px] text-slate-500">
+                <span>Approx age: 35–65+</span>
+                <span>Stages: Mid-career, Capstone, Encore</span>
+              </div>
+            </div>
+
+            <p class="mt-3 text-sm text-slate-600">
+              For senior managers, C-suite leaders, and encore builders who need a strategic repositioning, board-ready narrative, or a fully
+              redesigned work life that honors your next act.
+            </p>
+
+            <div class="mt-4 grid sm:grid-cols-2 gap-3 text-[12px] text-slate-600">
+              <ul class="space-y-1.5">
+                <li>• Executive pivots & transitions</li>
+                <li>• Reputation & story reboot</li>
+                <li>• Board / nonprofit / advisory pathways</li>
+              </ul>
+              <ul class="space-y-1.5">
+                <li>• White-glove, discreet support</li>
+                <li>• High-stakes negotiation prep</li>
+                <li>• Legacy & encore planning</li>
+              </ul>
+            </div>
+
+            <button
+              class="mt-4 inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-4 py-2 text-xs font-medium text-indigo-800 hover:bg-indigo-100"
+              onclick="document.getElementById('explorer').scrollIntoView({behavior:'smooth'})">
+              View Explorer Packages
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-SWELL FRAMEWORK -->
+    <section id="framework" class="py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+              The Mark4 “Four Swells” framework
+            </h2>
+            <p class="mt-2 text-sm text-slate-600 max-w-2xl">
+              Every program — Wave Rider or Explorer — moves through four structured segments:
+              <span class="font-medium">Discovery, Branding, Outreach, Ignite.</span>
+              Each ends with a concrete outcome that flows into your Wavevault.
+            </p>
+          </div>
+          <div class="text-[11px] text-slate-500 max-w-xs">
+            Think: Discovery Map → Branding Blueprint → Outreach Ramp → Ignite Vault / CRM.
+            You don’t just “feel better”; you leave with assets, language, and a repeatable system.
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-4">
+          <!-- Discovery -->
+          <div class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Swell 1</span>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">Discovery</h3>
+            <p class="mt-2 text-[13px] text-slate-600">
+              High-5 strengths, Priority Pie Chart, and the Discovery Map that captures your stories, wins, and non-negotiables.
+            </p>
+            <div class="mt-3 text-[11px] text-slate-500">
+              Outcome: a clear <span class="font-medium">Discovery Launchpad</span> that becomes the base layer of your future narrative.
+            </div>
+          </div>
+
+          <!-- Branding -->
+          <div class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Swell 2</span>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">Branding</h3>
+            <p class="mt-2 text-[13px] text-slate-600">
+              We translate your Discovery into a <span class="font-medium">Branding Blueprint</span>: resume language, LinkedIn, elevator stories, and proof bullets.
+            </p>
+            <div class="mt-3 text-[11px] text-slate-500">
+              Outcome: your personal <span class="font-medium">Branding Portfolio</span> — what Sparkwavv calls the Branding Treasure Chest.
+            </div>
+          </div>
+
+          <!-- Outreach -->
+          <div class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Swell 3</span>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">Outreach</h3>
+            <p class="mt-2 text-[13px] text-slate-600">
+              We design your <span class="font-medium">Outreach Launch Ramp</span> — targeted contacts, warm intros, and outreach scripts calibrated for your level.
+            </p>
+            <div class="mt-3 text-[11px] text-slate-500">
+              Outcome: a living <span class="font-medium">Outreach Dashboard</span> with weekly KPIs and momentum tracking.
+            </div>
+          </div>
+
+          <!-- Ignite -->
+          <div class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Swell 4</span>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">Ignite</h3>
+            <p class="mt-2 text-[13px] text-slate-600">
+              We turn your offers, conversations, and wins into an <span class="font-medium">Ignite Vault / CRM</span> so you never lose track of relationships or ramps.
+            </p>
+            <div class="mt-3 text-[11px] text-slate-500">
+              Outcome: a personal Wavevault — your long-term career asset library, not just a folder of PDFs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES & PRICING -->
+    <section id="packages" class="py-16 bg-white border-y border-slate-200/70">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+              Packages & investment
+            </h2>
+            <p class="mt-2 text-sm text-slate-600 max-w-2xl">
+              Three levels for each track — from focused sprints to deep, white-glove engagements.
+              All packages include structured sessions, email support between calls, and access to curated Sparkwavv tools.
+            </p>
+          </div>
+          <div class="text-[11px] text-slate-500 max-w-xs">
+            Payment plans available on all tiers. We also reserve a limited number of scholarship slots each quarter — ask about this on your intro call.
+          </div>
+        </div>
+
+        <!-- Wave Rider (Mark4Work) -->
+        <div id="wave-rider" class="mt-8">
+          <div class="flex items-center justify-between gap-3 mb-4">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full badge-highlight text-xs font-semibold text-white shadow-sm">
+                WR
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Wave Rider — Gen Z & early-career</h3>
+                <p class="text-xs text-slate-500">Designed around Exploration & Establishment stages (roughly 21–35).</p>
+              </div>
+            </div>
+            <button
+              class="hidden sm:inline-flex items-center rounded-full border border-slate-300 px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50"
+              onclick="openCalendlyIntro()">
+              Not sure which level? Talk with Mark.
+            </button>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-3">
+            <!-- Wave Rider -->
+            <div class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+              <div class="flex items-center justify-between gap-2">
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-900">Wave Rider</h4>
+                  <p class="text-[11px] text-slate-500">Foundation</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-medium text-slate-700">
+                  4 weeks · group
+                </span>
+              </div>
+              <div class="mt-3">
+                <span class="text-2xl font-semibold text-slate-900">$495</span>
+                <span class="ml-1 text-[11px] text-slate-500">or 2 × $260</span>
+              </div>
+              <ul class="mt-4 space-y-1.5 text-[13px] text-slate-600">
+                <li>• 4 live 75-min sessions (Discovery + Branding)</li>
+                <li>• High-5 test & Discovery Map</li>
+                <li>• Wave Rider workbook PDF</li>
+                <li>• Light email check-ins between sessions</li>
+              </ul>
+              <div class="mt-5 flex flex-col gap-2">
+                <a
+                  id="buy-wave-rider"
+                  href="#"
+                  class="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold text-white shadow-sm hover:shadow-md"
+                  style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));">
+                  Enroll &amp; Pay Online
+                </a>
+                <button
+                  class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-[11px] font-medium text-slate-700 hover:bg-slate-50"
+                  onclick="openCalendlyIntro()">
+                  Quick call about Wave Rider
+                </button>
+              </div>
+            </div>
+
+            <!-- Wave Rider Pro -->
+            <div class="card rounded-2xl border-2 border-[color:var(--swv-blue-main)] bg-white p-5 flex flex-col relative">
+              <div class="absolute -top-3 right-4 rounded-full px-3 py-1 text-[10px] font-semibold text-white shadow-sm badge-highlight">
+                Most popular
+              </div>
+              <div class="flex items-center justify-between gap-2">
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-900">Wave Rider Pro</h4>
+                  <p class="text-[11px] text-slate-500">Acceleration</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-sky-100 px-2.5 py-1 text-[10px] font-medium text-sky-800">
+                  6 weeks · small cohort
+                </span>
+              </div>
+              <div class="mt-3">
+                <span class="text-2xl font-semibold text-slate-900">$945</span>
+                <span class="ml-1 text-[11px] text-slate-500">or 3 × $335</span>
+              </div>
+              <ul class="mt-4 space-y-1.5 text-[13px] text-slate-600">
+                <li>• Everything in Wave Rider</li>
+                <li>• 2 extra sessions focused on Outreach Ramp</li>
+                <li>• Done-with-you resume & LinkedIn overhaul</li>
+                <li>• Mock interview & feedback loop</li>
+                <li>• 30 days of structured outreach metrics</li>
+              </ul>
+              <div class="mt-5 flex flex-col gap-2">
+                <a
+                  id="buy-wave-rider-pro"
+                  href="#"
+                  class="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold text-white shadow-sm hover:shadow-md"
+                  style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));">
+                  Enroll &amp; Pay Online
+                </a>
+                <button
+                  class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-[11px] font-medium text-slate-700 hover:bg-slate-50"
+                  onclick="openCalendlyIntro()">
+                  Talk to Mark about Pro
+                </button>
+              </div>
+            </div>
+
+            <!-- Wave Rider M4 -->
+            <div class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+              <div class="flex items-center justify-between gap-2">
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-900">Wave Rider M4</h4>
+                  <p class="text-[11px] text-slate-500">Coaching + system</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-medium text-emerald-700">
+                  8 weeks · 1:1 + cohort
+                </span>
+              </div>
+              <div class="mt-3">
+                <span class="text-2xl font-semibold text-slate-900">$1,750</span>
+                <span class="ml-1 text-[11px] text-slate-500">or 4 × $465</span>
+              </div>
+              <ul class="mt-4 space-y-1.5 text-[13px] text-slate-600">
+                <li>• Everything in Wave Rider Pro</li>
+                <li>• Four 1:1 coaching sessions with Mark</li>
+                <li>• Personalized Wavevault setup & training</li>
+                <li>• Offer / negotiation prep if interviews land</li>
+                <li>• Priority email + Voxer-style support</li>
+              </ul>
+              <div class="mt-5 flex flex-col gap-2">
+                <a
+                  id="buy-wave-rider-m4"
+                  href="#"
+                  class="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold text-white shadow-sm hover:shadow-md"
+                  style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));">
+                  Enroll &amp; Pay Online
+                </a>
+                <button
+                  class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-[11px] font-medium text-slate-700 hover:bg-slate-50"
+                  onclick="openCalendlyIntro()">
+                  10-min call: Is M4 right for me?
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explorer (Mark4Partners) -->
+        <div id="explorer" class="mt-12">
+          <div class="flex items-center justify-between gap-3 mb-4">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white shadow-sm">
+                EX
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Explorer — High Tide & encore executives</h3>
+                <p class="text-xs text-slate-500">Gen X, Jones, Boomers & senior Millennials at mid-career, capstone, or encore stages.</p>
+              </div>
+            </div>
+            <button
+              class="hidden sm:inline-flex items-center rounded-full border border-slate-300 px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50"
+              onclick="openCalendlyIntro()">
+              Schedule private consult
+            </button>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-3">
+            <!-- Explorer base -->
+            <div class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+              <div class="flex items-center justify-between gap-2">
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-900">Explorer</h4>
+                  <p class="text-[11px] text-slate-500">Executive reset</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-medium text-slate-700">
+                  4 x 75-min 1:1
+                </span>
+              </div>
+              <div class="mt-3">
+                <span class="text-2xl font-semibold text-slate-900">$1,500</span>
+                <span class="ml-1 text-[11px] text-slate-500">or 3 × $525</span>
+              </div>
+              <ul class="mt-4 space-y-1.5 text-[13px] text-slate-600">
+                <li>• Deep-dive Discovery & story audit</li>
+                <li>• Executive resume & LinkedIn recalibration</li>
+                <li>• High-level Branding Blueprint & 90-day plan</li>
+                <li>• Email support between sessions</li>
+              </ul>
+              <div class="mt-5 flex flex-col gap-2">
+                <a
+                  id="buy-explorer"
+                  href="#"
+                  class="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold text-white shadow-sm hover:shadow-md"
+                  style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));">
+                  Enroll &amp; Pay Online
+                </a>
+                <button
+                  class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-[11px] font-medium text-slate-700 hover:bg-slate-50"
+                  onclick="openCalendlyExplorer()">
+                  Private Explorer consult
+                </button>
+              </div>
+            </div>
+
+            <!-- Explorer Pro -->
+            <div class="card rounded-2xl border-2 border-slate-900 bg-white p-5 flex flex-col relative">
+              <div class="absolute -top-3 right-4 rounded-full px-3 py-1 text-[10px] font-semibold text-white shadow-sm" style="background: linear-gradient(135deg, var(--swv-orange), var(--swv-yellow));">
+                Best for transitions
+              </div>
+              <div class="flex items-center justify-between gap-2">
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-900">Explorer Pro</h4>
+                  <p class="text-[11px] text-slate-500">High-stakes pivot</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-amber-50 px-2.5 py-1 text-[10px] font-medium text-amber-800">
+                  6 x 75-min 1:1
+                </span>
+              </div>
+              <div class="mt-3">
+                <span class="text-2xl font-semibold text-slate-900">$1,950</span>
+                <span class="ml-1 text-[11px] text-slate-500">or 4 × $515</span>
+              </div>
+              <ul class="mt-4 space-y-1.5 text-[13px] text-slate-600">
+                <li>• Everything in Explorer base</li>
+                <li>• Dedicated Outreach Ramp & relationship map</li>
+                <li>• Interview architecture & leadership storytelling lab</li>
+                <li>• Offer, comp & title negotiation strategy</li>
+                <li>• Optional board / nonprofit positioning module</li>
+              </ul>
+              <div class="mt-5 flex flex-col gap-2">
+                <a
+                  id="buy-explorer-pro"
+                  href="#"
+                  class="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold text-white shadow-sm hover:shadow-md"
+                  style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));">
+                  Enroll &amp; Pay Online
+                </a>
+                <button
+                  class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-[11px] font-medium text-slate-700 hover:bg-slate-50"
+                  onclick="openCalendlyExplorer()">
+                  15-min transition consult
+                </button>
+              </div>
+            </div>
+
+            <!-- Explorer Pro M4 -->
+            <div class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+              <div class="flex items-center justify-between gap-2">
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-900">Explorer Pro M4</h4>
+                  <p class="text-[11px] text-slate-500">Concierge + Wavevault</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-slate-900/5 px-2.5 py-1 text-[10px] font-medium text-slate-900">
+                  8 x 75-min 1:1
+                </span>
+              </div>
+              <div class="mt-3">
+                <span class="text-2xl font-semibold text-slate-900">$2,500</span>
+                <span class="ml-1 text-[11px] text-slate-500">or 5 × $525</span>
+              </div>
+              <ul class="mt-4 space-y-1.5 text-[13px] text-slate-600">
+                <li>• Everything in Explorer Pro</li>
+                <li>• Custom Wavevault buildout & CRM design</li>
+                <li>• Executive communication templates & sequences</li>
+                <li>• Discreet support for crisis / reputation rebuilds</li>
+                <li>• Priority access during key decision windows</li>
+              </ul>
+              <div class="mt-5 flex flex-col gap-2">
+                <a
+                  id="buy-explorer-m4"
+                  href="#"
+                  class="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold text-white shadow-sm hover:shadow-md"
+                  style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));">
+                  Apply &amp; Pay Securely
+                </a>
+                <button
+                  class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-[11px] font-medium text-slate-700 hover:bg-slate-50"
+                  onclick="openCalendlyExplorer()">
+                  Private M4 conversation
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guarantee strip -->
+        <div class="mt-10 rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 py-5 sm:px-6 sm:py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div class="flex items-start gap-3">
+            <div class="mt-0.5 h-7 w-7 rounded-full bg-emerald-600 flex items-center justify-center text-white text-xs font-semibold">
+              ✓
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-emerald-900">Career Confidence Guarantee</h4>
+              <p class="mt-1 text-[13px] text-emerald-800">
+                Complete the work we agree on and, if you haven’t generated at least three substantive conversations or interviews
+                within 60 days of your program ending, we’ll design an additional sprint together at no extra tuition.
+              </p>
+            </div>
+          </div>
+          <div class="text-[11px] text-emerald-900/80">
+            <span class="font-semibold">14-day fit window.</span> If after two weeks you don’t feel more clear, confident, and equipped, just say so —
+            we’ll either recalibrate or refund your tuition.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">What clients experience</h2>
+            <p class="mt-2 text-sm text-slate-600 max-w-xl">
+              Names and identifying details are adjusted, but the arcs are real — Gen Z, Millennials, Gen X, Jones & Boomers.
+            </p>
+          </div>
+          <button
+            class="inline-flex items-center rounded-full border border-slate-300 px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50"
+            onclick="openCalendlyIntro()">
+            Talk through your scenario
+          </button>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-3">
+          <article class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+            <p class="text-[13px] text-slate-700">
+              “In 7 weeks I went from ‘I’ll take anything’ to three offers. The Discovery Map and Branding Blueprint finally made sense
+              of my zig-zag story.”
+            </p>
+            <div class="mt-4 text-[11px] text-slate-500">
+              Wave Rider M4 · Gen Z product designer · landed role at Series B SaaS company
+            </div>
+          </article>
+
+          <article class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+            <p class="text-[13px] text-slate-700">
+              “Mark helped me exit gracefully from a 20-year post, rebuild my reputation, and land a portfolio of board roles that actually
+              feel like my encore.”
+            </p>
+            <div class="mt-4 text-[11px] text-slate-500">
+              Explorer Pro M4 · Gen X media executive · 3 nonprofit boards + 1 advisory role
+            </div>
+          </article>
+
+          <article class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+            <p class="text-[13px] text-slate-700">
+              “The Outreach Ramp and dashboard took all the emotion out of ‘networking’ — it became a series of small waves instead of a
+              tidal wave of anxiety.”
+            </p>
+            <div class="mt-4 text-[11px] text-slate-500">
+              Wave Rider Pro · late Millennial manager · internal promotion + salary bump
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 bg-white border-y border-slate-200/70">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">Questions people ask before we start</h2>
+          <p class="mt-2 text-sm text-slate-600">
+            A few quick answers — we’ll cover the rest on your intro call.
+          </p>
+        </div>
+
+        <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50/80 divide-y divide-slate-200">
+          <details class="group open">
+            <summary class="flex items-center justify-between px-5 py-4 cursor-pointer">
+              <span class="text-sm font-semibold text-slate-900">How do payments and Zoom scheduling work?</span>
+              <span class="text-xl text-slate-500 group-open:hidden">+</span>
+              <span class="hidden text-xl text-slate-500 group-open:inline">−</span>
+            </summary>
+            <div class="px-5 pb-4 text-[13px] text-slate-700">
+              All payments are processed securely via Stripe checkout links on this page. Once you enroll, you’ll receive
+              a confirmation email and a Calendly link to schedule your sessions; Zoom links are auto-generated for each call.
+            </div>
+          </details>
+
+          <details class="group">
+            <summary class="flex items-center justify-between px-5 py-4 cursor-pointer">
+              <span class="text-sm font-semibold text-slate-900">What’s the difference between Wave Rider and Explorer?</span>
+              <span class="text-xl text-slate-500 group-open:hidden">+</span>
+              <span class="hidden text-xl text-slate-500 group-open:inline">−</span>
+            </summary>
+            <div class="px-5 pb-4 text-[13px] text-slate-700">
+              Wave Rider is optimized for Exploration & Establishment stages (roughly 21–35): first job, first promotion, early pivots.
+              Explorer is for mid-career, capstone, and encore stages (typically 35–65+), with more emphasis on positioning, legacy,
+              and high-stakes transitions.
+            </div>
+          </details>
+
+          <details class="group">
+            <summary class="flex items-center justify-between px-5 py-4 cursor-pointer">
+              <span class="text-sm font-semibold text-slate-900">Can my company sponsor this as professional development?</span>
+              <span class="text-xl text-slate-500 group-open:hidden">+</span>
+              <span class="hidden text-xl text-slate-500 group-open:inline">−</span>
+            </summary>
+            <div class="px-5 pb-4 text-[13px] text-slate-700">
+              Yes. Many Explorer and Wave Rider M4 clients use professional development or transition budgets.
+              We can provide an invoice with program description, outcomes, and dates to submit to HR or your manager.
+            </div>
+          </details>
+
+          <details class="group">
+            <summary class="flex items-center justify-between px-5 py-4 cursor-pointer">
+              <span class="text-sm font-semibold text-slate-900">Do you work with people outside the U.S.?</span>
+              <span class="text-xl text-slate-500 group-open:hidden">+</span>
+              <span class="hidden text-xl text-slate-500 group-open:inline">−</span>
+            </summary>
+            <div class="px-5 pb-4 text-[13px] text-slate-700">
+              Absolutely. Sessions are on Zoom and we regularly work across time zones. We’ll confirm logistics and
+              regional nuances (e.g., CV vs resume, local hiring norms) during your intro call.
+            </div>
+          </details>
+        </div>
+
+        <div class="mt-8 text-center">
+          <button
+            class="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:shadow-md"
+            style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));"
+            onclick="openCalendlyIntro()">
+            Book your free 20-min fit call
+          </button>
+          <p class="mt-2 text-[11px] text-slate-500">
+            No pressure, no hard sell — just a clear recommendation on the right wave for you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-14">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-[color:var(--swv-bg-alt)] to-[color:var(--swv-bg)] px-6 py-8 sm:px-8 sm:py-10 text-center relative overflow-hidden">
+          <div class="pointer-events-none absolute -top-16 -right-10 h-40 w-40 rounded-full opacity-40" style="background: radial-gradient(circle, var(--swv-yellow), transparent 60%);"></div>
+          <div class="pointer-events-none absolute -bottom-16 -left-10 h-40 w-40 rounded-full opacity-40" style="background: radial-gradient(circle, var(--swv-blue-main), transparent 60%);"></div>
+
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900 relative">
+            Ready for your next wave?
+          </h3>
+          <p class="mt-3 text-sm text-slate-600 max-w-xl mx-auto relative">
+            Whether you choose a focused sprint or a full Mark4 pathway, we’ll treat your career like the long-term asset it is —
+            with structure, story, and Sparkwavv-level intention.
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-3 relative">
+            <button
+              class="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:shadow-md"
+              style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));"
+              onclick="openCalendlyIntro()">
+              Start with a free fit call
+            </button>
+            <button
+              class="inline-flex items-center rounded-full border border-slate-300 px-4 py-2.5 text-xs sm:text-sm font-medium text-slate-800 bg-white/80 hover:bg-white"
+              onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">
+              Or jump straight to packages
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200/80 py-6 bg-white/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+        <div class="flex items-center gap-2">
+          <div class="h-6 w-6 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, var(--swv-blue-main), var(--swv-blue-deep));">
+            <span class="text-[10px] font-bold text-white">M4</span>
+          </div>
+          <span>© <span id="year"></span> Mark Workman · Sparkwavv · All rights reserved.</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <!-- Replace with actual policy links -->
+          <a href="#" class="hover:text-slate-800">Privacy</a>
+          <a href="#" class="hover:text-slate-800">Terms</a>
+          <a href="mailto:markw@sparkwavv.com" class="hover:text-slate-800">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- URL + Calendly wiring -->
+    <script>
+      // TODO: plug in real URLs before launch
+      const CALENDLY_INTRO_URL   = "https://calendly.com/mark/intro";        // free fit call
+      const CALENDLY_EXPLORER_URL = "https://calendly.com/mark/explorer";    // executive consult
+      const CHECKOUT_WAVE_RIDER      = "https://buy.stripe.com/your-wave-rider-link";
+      const CHECKOUT_WAVE_RIDER_PRO  = "https://buy.stripe.com/your-wave-rider-pro-link";
+      const CHECKOUT_WAVE_RIDER_M4   = "https://buy.stripe.com/your-wave-rider-m4-link";
+      const CHECKOUT_EXPLORER        = "https://buy.stripe.com/your-explorer-link";
+      const CHECKOUT_EXPLORER_PRO    = "https://buy.stripe.com/your-explorer-pro-link";
+      const CHECKOUT_EXPLORER_M4     = "https://buy.stripe.com/your-explorer-m4-link";
+
+      // Attach checkout links
+      const checkoutMap = {
+        "buy-wave-rider": CHECKOUT_WAVE_RIDER,
+        "buy-wave-rider-pro": CHECKOUT_WAVE_RIDER_PRO,
+        "buy-wave-rider-m4": CHECKOUT_WAVE_RIDER_M4,
+        "buy-explorer": CHECKOUT_EXPLORER,
+        "buy-explorer-pro": CHECKOUT_EXPLORER_PRO,
+        "buy-explorer-m4": CHECKOUT_EXPLORER_M4,
+      };
+
+      Object.entries(checkoutMap).forEach(([id, url]) => {
+        const el = document.getElementById(id);
+        if (el && url) el.href = url;
+      });
+
+      // Simple helpers for Calendly links
+      function openCalendlyIntro() {
+        if (window.Calendly && CALENDLY_INTRO_URL) {
+          Calendly.initPopupWidget({ url: CALENDLY_INTRO_URL });
+        } else if (CALENDLY_INTRO_URL) {
+          window.open(CALENDLY_INTRO_URL, "_blank");
+        }
+      }
+
+      function openCalendlyExplorer() {
+        if (window.Calendly && CALENDLY_EXPLORER_URL) {
+          Calendly.initPopupWidget({ url: CALENDLY_EXPLORER_URL });
+        } else if (CALENDLY_EXPLORER_URL) {
+          window.open(CALENDLY_EXPLORER_URL, "_blank");
+        }
+      }
+
+      // Footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
