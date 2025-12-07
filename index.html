@@ -336,69 +336,108 @@
       </div>
     </section>
 
-    <!-- LIVE SESSION SNAPSHOT: Pepperdine -->
-    <section class="py-16 section-bg border-y border-slate-200/70">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto">
-          <div class="rounded-3xl overflow-hidden bg-white border border-slate-200">
-            <div class="grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
-              <div class="bg-slate-900/80 text-white p-4 sm:p-5 flex flex-col gap-3">
-                <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-300">
-                  LIVE SESSION SNAPSHOT
-                </p>
-                <h3 class="text-lg font-semibold">
-                  Pepperdine small-group intensive with a Fortune 500 Chief Learning Officer
-                </h3>
-                <p class="text-[13px] text-slate-100/90">
-                  A Sparkwavv-style workshop where Mark guided senior leaders through Discovery, Branding, and Outreach tools —
-                  mapping real career arcs and future transitions in a single afternoon.
-                </p>
-                <ul class="mt-1 text-[12px] space-y-1.5 text-slate-100/80">
-                  <li>• Co-designed with Pepperdine faculty and executive education staff</li>
-                  <li>• Live integration of Wave Rider / Explorer concepts for corporate talent</li>
-                  <li>• Immediate take-home frameworks for the CLO's internal leadership cohorts</li>
-                </ul>
-                <p class="mt-2 text-[11px] text-slate-300/90">
-                  These same tools now power Mark 4 Careers programs — adapted for individual professionals and executive clients.
-                </p>
-              </div>
+    <!-- MODAL: Pepperdine gallery -->
+    <div
+      id="pepperdine-modal"
+      class="modal-hidden fixed inset-0 z-50 flex items-center justify-center modal-backdrop">
+      <div
+        class="max-w-3xl w-full mx-4 rounded-3xl bg-white shadow-2xl overflow-hidden relative">
+        <button
+          class="absolute right-4 top-4 text-slate-500 hover:text-slate-800"
+          aria-label="Close"
+          onclick="closeModal('pepperdine-modal')">
+          ✕
+        </button>
 
-              <div class="bg-slate-50 p-4 sm:p-5 flex flex-col gap-3">
-                <div class="aspect-video rounded-xl overflow-hidden border border-slate-200 bg-slate-200/70">
-                  <img
-                    src="/assets/pepperdine-session-1.jpg"
-                    alt="Mark leading a Sparkwavv session at Pepperdine with a Fortune 500 CLO"
-                    class="w-full h-full object-cover" />
-                </div>
-                <div class="grid grid-cols-3 gap-2">
-                  <div class="aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-200/70">
-                    <img
-                      src="/assets/pepperdine-session-2.jpg"
-                      alt="Close-up of Sparkwavv worksheets in use at Pepperdine"
-                      class="w-full h-full object-cover" />
-                  </div>
-                  <div class="aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-200/70">
-                    <img
-                      src="/assets/pepperdine-session-3.jpg"
-                      alt="Participants collaborating during Pepperdine breakout session"
-                      class="w-full h-full object-cover" />
-                  </div>
-                  <div class="aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-200/70">
-                    <img
-                      src="/assets/pepperdine-session-4.jpg"
-                      alt="Mark discussing career arcs with senior leaders"
-                      class="w-full h-full object-cover" />
-                  </div>
-                </div>
-                <p class="text-[10px] text-slate-500">
-                  Photos from the live Pepperdine session with corporate leaders.
-                </p>
-              </div>
+        <div class="grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+          <!-- Text side -->
+          <div class="bg-slate-900/90 text-white p-4 sm:p-5 flex flex-col gap-3">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-300">
+              Live Session Snapshot
+            </p>
+            <h3 class="text-lg sm:text-xl font-semibold">
+              Pepperdine small-group intensive with
+              <span class="whitespace-nowrap">Fortune 500 Chief Learning Officer</span>
+              <a
+                href="https://www.linkedin.com/in/andylevin/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline decoration-sky-300/70 underline-offset-2 hover:text-sky-200">
+                Andy Levin
+              </a>
+            </h3>
+            <p class="text-[13px] text-slate-100/90">
+              A Sparkwavv-style workshop where Mark guided Andy and senior leaders through
+              Discovery, Branding, and Outreach tools — mapping real career arcs and future
+              transitions in a single afternoon.
+            </p>
+            <ul class="mt-1 text-[12px] space-y-1.5 text-slate-100/80">
+              <li>• Co-designed with Pepperdine faculty and executive education staff</li>
+              <li>• Live integration of Wave Rider / Explorer concepts for corporate talent</li>
+              <li>• Immediate take-home frameworks for the CLO's internal leadership cohorts</li>
+            </ul>
+            <p class="mt-2 text-[11px] text-slate-300/90">
+              These same tools now power Mark 4 Careers programs — adapted for individual
+              professionals and executive clients.
+            </p>
+          </div>
+
+          <!-- Gallery side -->
+          <div class="bg-slate-50 p-4 sm:p-5 flex flex-col gap-4">
+            <!-- Main image -->
+            <div class="aspect-video rounded-xl overflow-hidden border border-slate-200 bg-slate-200/70">
+              <img
+                id="pepperdine-main-photo"
+                src="./assets/Andy01.jpeg"
+                alt="Mark and Andy Levin during a Sparkwavv session at Pepperdine"
+                class="w-full h-full object-cover object-center" />
             </div>
+
+            <!-- Thumbnails -->
+            <div class="grid grid-cols-3 gap-2">
+              <button
+                type="button"
+                class="group relative aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-200/70 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                onclick="setPepperdinePhoto('./assets/Andy01.jpeg')">
+                <img
+                  src="./assets/Andy01.jpeg"
+                  alt="Andy Levin and Mark Workman, Pepperdine session"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" />
+              </button>
+              <button
+                type="button"
+                class="group relative aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-200/70 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                onclick="setPepperdinePhoto('./assets/Andy02.jpeg')">
+                <img
+                  src="./assets/Andy02.jpeg"
+                  alt="Close-up of Sparkwavv tools in use at Pepperdine"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" />
+              </button>
+              <button
+                type="button"
+                class="group relative aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-200/70 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                onclick="setPepperdinePhoto('./assets/Andy03.jpeg')">
+                <img
+                  src="./assets/Andy03.jpeg"
+                  alt="Participants collaborating during the Pepperdine workshop"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" />
+              </button>
+            </div>
+
+            <p class="text-[10px] text-slate-500">
+              Photos from the live Pepperdine session with
+              <a
+                href="https://www.linkedin.com/in/andylevin/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-medium text-slate-700 underline underline-offset-2">
+                Andy Levin
+              </a>, a Fortune 500 Chief Learning Officer.
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- WHO I WORK WITH / TRACKS -->
     <section id="tracks" class="py-14 section-bg border-y border-slate-200/70">
@@ -939,7 +978,9 @@
           </article>
 
           <!-- Pepperdine case -->
-          <article class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col">
+          <article
+            class="card rounded-2xl border border-slate-200 bg-white/80 p-5 flex flex-col cursor-pointer"
+            onclick="openModal('pepperdine-modal')">
             <p class="text-[13px] text-slate-700">
               “In a single afternoon, Mark reframed how our Fortune 500 learning culture talks about career arcs. The Sparkwavv tools
               translated instantly to our high-potential leaders.”
@@ -947,6 +988,9 @@
             <div class="mt-4 text-[11px] text-slate-500">
               Pepperdine University small-group session · Fortune 500 Chief Learning Officer & senior leaders
             </div>
+            <span class="mt-3 inline-flex items-center text-[11px] font-medium text-[color:var(--swv-blue-mid)]">
+              View photos & session highlights →
+            </span>
           </article>
         </div>
       </div>
@@ -1132,6 +1176,14 @@
         const el = document.getElementById(id);
         if (!el) return;
         el.classList.add("modal-hidden");
+      }
+
+      // Swap main Pepperdine photo when thumbnails are clicked
+      function setPepperdinePhoto(src) {
+        const main = document.getElementById("pepperdine-main-photo");
+        if (main && src) {
+          main.src = src;
+        }
       }
 
       // Close modal on backdrop click
